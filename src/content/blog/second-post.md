@@ -2,6 +2,7 @@
 title: "Second post"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 22 2022"
+author: "Lynxgsm"
 heroImage: "/placeholder-hero.jpg"
 ---
 
