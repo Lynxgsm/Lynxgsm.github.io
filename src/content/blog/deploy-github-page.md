@@ -1,6 +1,6 @@
 ---
 title: "Deploy Github Page with Astro"
-description: "Lorem ipsum dolor sit amet"
+description: "Get started with creating a blog with Astro"
 pubDate: "25 Mar 2023"
 heroImage: "/placeholder-hero.jpg"
 author: "Lynxgsm"

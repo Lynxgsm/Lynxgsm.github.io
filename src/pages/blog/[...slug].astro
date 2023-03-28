@@ -17,5 +17,7 @@ const { Content } = await post.render();
 
 <BlogPost {...post.data}>
   <h1 class="text-center text-4xl font-bold">{post.data.title}</h1>
-  <Content />
+  <div class="px-4 md:px-48">
+    <Content />
+  </div>
 </BlogPost>
