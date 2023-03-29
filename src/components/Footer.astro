@@ -1,16 +1,41 @@
 ---
-import { NAME } from "../consts";
+import { Icon } from "astro-icon";
 
 const today = new Date();
+const links: { icon: string; link: string }[] = [
+  {
+    icon: "facebook",
+    link: "https://web.facebook.com/ailifidaaliotti",
+  },
+  { icon: "twitter", link: "https://twitter.com/FidaAili" },
+  {
+    icon: "linkedin",
+    link: "https://www.linkedin.com/in/fida-aliotti-wylog-a%C3%AFli-2123b520b/",
+  },
+  { icon: "email", link: "mailto:aili.fida.ac@gmail.com" },
+];
 ---
 
-<footer class="bg-gray-900 text-white">
-  &copy; {today.getFullYear()}
-  {NAME}. All rights reserved.
-</footer>
-<style>
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-</style>
+<div
+  class="bg-gray-900 flex text-white justify-center md:justify-between items-center px-8 py-8 md:py-16"
+>
+  <h3 class="hidden md:flex gap-2 items-center">
+    <Icon class="text-red-600" name="mdi:heart" size={24} />
+    <span class="ml-1.5">from Madagascar</span>
+  </h3>
+  <ul class="flex w-full md:w-1/4 justify-evenly">
+    {
+      links.map((link, index) => {
+        return (
+          <li class="text-xl">
+            <a href={link.link}>
+              <span>
+                <Icon pack="mdi" size={24} color="white" name={link.icon} />
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

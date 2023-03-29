@@ -1,7 +1,25 @@
-.article,
-h1,
-h2 {
-  font-size: 2rem;
+article h2 {
+  font-size: 1.875rem;
+  color: rgb(2 6 23);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+article h2::before {
+  content: "# ";
+}
+
+article h3 {
+  font-size: 1.5rem;
+  color: rgb(2 6 23);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+article hr {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 article p {
@@ -9,12 +27,31 @@ article p {
   margin-bottom: 1rem;
 }
 
+article a {
+  color: rgb(37, 99, 235);
+  text-decoration: underline;
+}
+
+article li code {
+  font-weight: bold;
+}
+
+article ul li {
+  list-style-type: square;
+  margin-left: 0.825rem;
+}
+
 article p code {
   font-style: italic;
   color: cadetblue;
 }
 
+article em {
+  font-style: italic;
+  color: burlywood;
+}
+
 .astro-code {
-  padding: 1rem 1rem 1rem 0.5rem;
-  font-size: 0.75rem;
+  padding: 1rem;
+  font-size: 0.825rem;
 }

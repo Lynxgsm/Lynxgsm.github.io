@@ -1,63 +1,47 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="p-8">
-      <h1>🧑‍🚀 Hello, Astronaut!</h1>
-      <p>
-        Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-        template. This template serves as a lightweight, minimally-styled starting
-        point for anyone looking to build a personal website, blog, or portfolio
-        with Astro.
+    <div class="h-64 md:flex md:min-h-screen">
+      <div class="flex-1 h-screen img-header bg-cover bg-center"></div>
+      <div class="md:flex-1 bg-gray-50"></div>
+    </div>
+    <div
+      class="relative p-16 md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/4 md:-translate-y-1/4 bg-white md:w-1/2 md:shadow-md"
+    >
+      <div class="text-gray-600 font-normal text-sm mb-2">
+        Développeur d'applications
+      </div>
+      <h2 class="text-3xl mb-2 font-semibold font-body">
+        AILI FIDA Aliotti Christino
+      </h2>
+      <p class="text-gray-600">
+        Autodidacte, et passionné de nouvelles technologies. Je sillonne le net
+        chaque jour pour me ressourcer en informations. J'adore créer des
+        produits qui ont un sens et qui apportent une valeur ajoutée aux
+        utilisateurs.
       </p>
-      <p>
-        This template comes with a few integrations already configured in your
-        <code>astro.config.mjs</code> file. You can customize your setup with
-        <a href="https://astro.build/integrations">Astro Integrations</a> to add
-        tools like Tailwind, React, or Vue to your project.
-      </p>
-      <p>Here are a few ideas on how to get started with the template:</p>
-      <ul>
-        <li>Edit this page in <code>src/pages/index.astro</code></li>
-        <li>
-          Edit the site header items in <code>src/components/Header.astro</code>
-        </li>
-        <li>
-          Add your name to the footer in <code
-            >src/components/Footer.astro</code>
-        </li>
-        <li>
-          Check out the included blog posts in <code>src/pages/blog/</code>
-        </li>
-        <li>
-          Customize the blog post page layout in <code
-            >src/layouts/BlogPost.astro</code>
-        </li>
-      </ul>
-      <p>
-        Have fun! If you get stuck, remember to <a
-          href="https://docs.astro.build/"
-          >read the docs
-        </a> or <a href="https://astro.build/chat">join us on Discord</a> to ask
-        questions.
-      </p>
-      <p>
-        Looking for a blog template with a bit more personality? Check out <a
-          href="https://github.com/Charca/astro-blog-template"
-          >astro-blog-template
-        </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-      </p>
-    </main>
+      <button
+        class="border-green-300 border-2 py-2 px-3 shadow-md rounded-full mt-8 hover:bg-green-300 hover:text-white transition-all duration-500"
+      >
+        Télécharger mon CV
+      </button>
+    </div>
     <Footer />
+    <style>
+      .img-header {
+        background-image: url("https://lmpixels.com/wp/leven-wp/wp-content/uploads/2019/12/cesar-rincon-1024x1024.jpg");
+      }
+    </style>
   </body>
 </html>

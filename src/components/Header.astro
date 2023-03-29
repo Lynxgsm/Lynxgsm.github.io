@@ -1,31 +1,57 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import { Icon } from "astro-icon";
 
+type MenuProps = {
+  title: string;
+  icon: string;
+  href: string;
+};
 
+const menus: MenuProps[] = [
+  {
+    title: "Home",
+    icon: "home-outline",
+    href: "/",
+  },
+  {
+    title: "Blog",
+    icon: "blog-outline",
+    href: "/blog",
+  },
+  {
+    title: "About",
+    icon: "info-outline",
+    href: "/about",
+  },
+];
 ---
 
 <header>
-  <nav class="flex justify-between p-8 bg-gray-800 text-white">
-    <a href="/">Logo</a>
-    <ul class="w-1/3 flex flex-row justify-between">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
-        Twitter
-      </HeaderLink>
-      <HeaderLink href="https://github.com/withastro/astro" target="_blank">
-        GitHub
-      </HeaderLink>
+  <nav
+    class="flex justify-between items-center p-4 md:p-8 bg-gray-800 text-white"
+    data-scroll
+    data-scroll-sticky
+    data-scroll-target="#about"
+  >
+    <a href="/">
+      <span
+        class="block font-bold rounded-full text-center bg-white h-12 w-12 p-2 text-white text-2xl"
+      >
+        A
+      </span></a
+    >
+    <ul class="w-1/2 md:w-1/4 flex flex-row justify-between">
+      {
+        menus.map((menu) => {
+          return (
+            <HeaderLink href={menu.href}>
+              <Icon pack="mdi" name={menu.icon} size={24} />{" "}
+              <span class="hidden md:block">{menu.title}</span>
+            </HeaderLink>
+          );
+        })
+      }
     </ul>
   </nav>
 </header>
-<style>
-  header {
-    margin: 0em 0 2em;
-  }
-  h2 {
-    margin: 0.5em 0;
-  }
-</style>

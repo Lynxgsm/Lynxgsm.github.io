@@ -3,13 +3,10 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-import Breadcrumb from "../components/Breadcrumb.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, author } =
-  Astro.props;
+const { title, description, heroImage, author } = Astro.props;
 ---
 
 <html lang="en">
@@ -19,22 +16,22 @@ const { title, description, pubDate, updatedDate, heroImage, author } =
 
   <body>
     <Header />
-    <main class="md:p-8 flex flex-col">
-      <Breadcrumb />
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="text-left">{title}</h1>
-        <FormattedDate date={pubDate} /> By {author}
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
-            </div>
-          )
-        }
+    <main>
+      <!-- <Breadcrumb /> -->
+      {heroImage && <img class="w-full" src={heroImage} alt="" />}
+      <article class="md:p-8 flex flex-col">
+        <!-- <div class="px-4 md:px-48">
+          <h3 class="font-bold">
+            {author}
+          </h3>
+          <h4 class="text-gray-500 text-xs">
+            Published at <FormattedDate date={pubDate} />
+          </h4>
+        </div> -->
         <slot />
       </article>
     </main>
+
     <Footer />
   </body>
 </html>

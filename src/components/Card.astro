@@ -8,7 +8,7 @@ const { data, slug } = Astro.props as CollectionEntry<"blog">;
 
 <div class="block p-4 border-2">
   <img
-    alt="Art"
+    alt={data.title}
     src={data.heroImage}
     class="h-64 w-full object-cover sm:h-80 lg:h-96 rounded-md"
   />

@@ -10,7 +10,11 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <li>
-  <a href={href} class:list={[className, { active: isActive }]} {...props}>
+  <a
+    href={href}
+    class:list={[className, { active: isActive }, "flex gap-2"]}
+    {...props}
+  >
     <slot />
   </a>
 </li>
